@@ -23,6 +23,17 @@ class PermissionsDemoSeeder extends Seeder
         Permission::create(['guard_name' => 'api', 'name' => 'publish articles']);
         Permission::create(['guard_name' => 'api', 'name' => 'unpublish articles']);
 
+        Permission::create(['guard_name' => 'api', 'name' => 'register_role']);
+        Permission::create(['guard_name' => 'api', 'name' => 'update_role']);
+        Permission::create(['guard_name' => 'api', 'name' => 'delete_role']);
+        Permission::create(['guard_name' => 'api', 'name' => 'list_role']);
+
+        Permission::create(['guard_name' => 'api', 'name' => 'register_user']);
+        Permission::create(['guard_name' => 'api', 'name' => 'update_user']);
+        Permission::create(['guard_name' => 'api', 'name' => 'delete_user']);
+        Permission::create(['guard_name' => 'api', 'name' => 'list_user']);
+
+
         // create roles and assign existing permissions
         $role1 = Role::create(['guard_name' => 'api', 'name' => 'writer']);
         $role1->givePermissionTo('edit articles');
