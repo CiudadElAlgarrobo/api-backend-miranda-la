@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RolePermissionController;
+use App\Http\Controllers\UserAccessController;
  
 Route::group([
     //'middleware' => 'auth:api',
-    'prefix' => 'auth',
     //'middleware' => ['auth:api','permission:publish articles'],
     //'middleware' => ['auth:api'],
 ], function ($router) {
@@ -24,4 +24,5 @@ Route::group([
 ], function ($router) {
     Route::resource('roles', RolePermissionController::class);
     Route::get('permissions', [RolePermissionController::class, 'getAllPermissions']);
+    Route::resource('users', UserAccessController::class);
 });
